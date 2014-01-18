@@ -23,7 +23,15 @@ function rekt()
 
   cd temp/
   rm -rf temp/ #For some reason it nests temp directories...
-  git commit -am "Git rekt, Mr. Repository."
+  git commit -am "Git rekt"
+
+  for file in $(ls -a)
+  do
+    if [ "$file" != "temp" ]
+    then
+      rm -rf "$file"
+    fi
+  done
 }
 
 ############################################
