@@ -25,6 +25,7 @@ function rekt()
   rm .git
   mv temp/* ./*
   git commit -am "Git rekt, Mr. Repository."
+  rmdir temp
 }
 
 ############################################
