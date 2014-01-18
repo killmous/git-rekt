@@ -35,9 +35,9 @@ function rekt()
     fi
   done
 
-  mv -f temp/* ./
   mv -f temp/.git/ ./
-  rmdir temp
+  rm -rf temp
+  git reset --hard HEAD
 }
 
 ############################################
