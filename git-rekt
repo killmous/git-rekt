@@ -4,22 +4,37 @@
 
 function rekt()
 {
-  git checkout --orphan "root"
-  git rm -rf .
-  git commit --allow-empty -m "Root Commit"
+  dir=$(pwd)
+  mkdir temp
+  cd temp/
+  git init
+  cd ../
+
   for branch in $(git branch)
   do
-    git rebase --onto root --root "$branch"
+  	if [ "$branch" != "*" ]
+  	then
+  	  cd temp/
+  	  git checkout --orphan "$branch"
+  	  cd ../
+      git checkout "$branch"
+      mv ./* temp/
+    fi
   done
+
+  rm .git
+  mv temp/* ./*
+  git commit -am "Git rekt, Mr. Repository."
 }
 
 ############################################
 ############################################
 
-echo -n "Hey dood you want git rekt? [y/n]"
+echo -n "You want git rekt? [y/n]"
 read input
 
-if [ "$input" == "y" ]; then
+if [ "$input" == "y" ]
+then
   rekt
   echo "Consider yourself rekt."
 else
