@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo -n "Hey dood you want git rekt? [y/n]"
+read input
+
+if [ "$input" == "y" ]; then
+  shred *
+  echo "Consider yourself rekt."
+else
+  echo "Chicken exit's right over here for you."
+fi
