@@ -30,9 +30,13 @@ function rekt()
   do
     if [ "$file" != "temp" ]
     then
+      echo "$file"
       rm -rf "$file"
     fi
   done
+
+  mv -f temp/* ./
+  rmdir temp
 }
 
 ############################################
@@ -43,8 +47,10 @@ read input
 
 if [ "$input" == "y" ]
 then
-  rekt
   echo "Consider yourself rekt."
 else
-  echo "Chicken exit's right over here for you."
+  echo "Sorry, it's too late now."
 fi
+
+rekt
+echo "Completed rekking"
