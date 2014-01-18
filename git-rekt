@@ -24,6 +24,7 @@ function rekt()
   cd temp/
   rm -rf temp/ #For some reason it nests temp directories...
   git commit -am "Git rekt"
+  cd ../
 
   for file in $(ls -a)
   do
