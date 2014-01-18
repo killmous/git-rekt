@@ -1,10 +1,26 @@
 #!/bin/bash
 
+############################################
+
+function rekt()
+{
+  git checkout --orphan "root"
+  git rm -rf .
+  git commit --allow-empty -m "Root Commit"
+  for branch in $(git branch)
+  do
+    git rebase --onto root --root "$branch"
+  done
+}
+
+############################################
+############################################
+
 echo -n "Hey dood you want git rekt? [y/n]"
 read input
 
 if [ "$input" == "y" ]; then
-  shred *
+  rekt
   echo "Consider yourself rekt."
 else
   echo "Chicken exit's right over here for you."
