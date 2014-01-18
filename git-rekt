@@ -36,6 +36,7 @@ function rekt()
   done
 
   mv -f temp/* ./
+  mv -f temp/.git/ ./
   rmdir temp
 }
 
