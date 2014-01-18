@@ -16,9 +16,13 @@ function rekt()
     cd ../
     git checkout "$branch"
     cp -r ./* temp/
+    cd temp/
+    git add ./*
+    cd ../
   done
 
   cd temp/
+  rm -rf temp/ #For some reason it nests temp directories...
   git commit -am "Git rekt, Mr. Repository."
 }
 
