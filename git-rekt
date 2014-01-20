@@ -43,6 +43,13 @@ function rekt()
 ############################################
 ############################################
 
+if [ ! -d .git/ ]
+then
+  echo "No git repository present."
+  echo "Exiting..."
+  exit
+fi
+
 echo -n "You want git rekt? [y/n]"
 read input
 
