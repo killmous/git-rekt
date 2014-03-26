@@ -8,6 +8,7 @@ function rekt()
   cd temp/
   git init
   cd ../
+  cp -rf .git/config temp/.git/
 
   for branch in $(git branch | cut -c3-)
   do
@@ -50,7 +51,7 @@ then
   exit
 fi
 
-echo -n "You want git rekt? [y/n]"
+echo -n "Do you want to git rekt? [y/n]"
 read input
 
 if [ "$input" == "y" ]
