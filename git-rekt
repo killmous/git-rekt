@@ -9,6 +9,10 @@ function rekt()
   git init
   cd ../
   cp -rf .git/config temp/.git/
+  if [ -f .gitignore ]
+  then
+    mv .gitignore ../.gitignore-temp
+  fi
 
   for branch in $(git branch | cut -c3-)
   do
@@ -37,6 +41,10 @@ function rekt()
   done
 
   mv -f temp/.git/ ./
+  if [ -f ../.gitignore-temp ]
+  then
+    mv ../.gitignore-temp ./.gitignore
+  fi
   rm -rf temp
   git reset --hard HEAD
 }
