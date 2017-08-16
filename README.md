@@ -1,12 +1,12 @@
-#git-rekt
+# git-rekt
 
 > Because sometimes repositories just need to git rekt
 
-##What is git-rekt?
+## What is git-rekt?
 
 Git-rekt is a plugin for git that will squash a project into a single commit. The current states of each branch will remain intact, but the history will be thoroughly rekt, which could be quite helpful for large repositories that take up a large amount of system memory.
 
-##How do I install git-rekt?
+## How do I install git-rekt?
 
 Git-rekt can be installed simply using the included install.sh script:
     
@@ -14,7 +14,7 @@ Git-rekt can be installed simply using the included install.sh script:
     
 Installation instructions are also packaged with the plugin.
 
-##How do I use git-rekt?
+## How do I use git-rekt?
 
 Git-rekt can be used like any other git plugin, i.e. go to the repository that you wish to rek, and simply input
     
